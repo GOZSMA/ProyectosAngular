@@ -1,0 +1,7 @@
+<h1>Detector de mayoría de edad</h1>
+<p>¿Cuál es tu edad actualmente?</p>
+
+<input type="text" [(ngModel)]="edad">
+<p>Entonces, con tus [{{edad}}] años de edad, tú eres:</p>
+<p [ngClass]="'mayor'" *ngIf="edad >= 18">Mayor de edad</p>
+<p [ngClass]="'menor'" *ngIf="edad <= 17">Menor de edad</p>

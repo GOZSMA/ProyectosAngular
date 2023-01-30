@@ -1,0 +1,40 @@
+<app-spinner></app-spinner>
+
+<app-navbar></app-navbar>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+
+
+<!-- C O D I G O - O R I G I N A L -->
+<!-- <img src="{{url}}" alt="">
+
+<p *ngIf="name">Tu nombre es: {{name}}</p>
+<input type="text" [(ngModel)]="name">
+
+<ul>
+    <li [ngClass]="'selected blue'">{{city}}</li>
+    <li [ngClass]="['selected', 'blue']">{{city}}</li>
+    <li [ngClass]="{'selected': true}">{{city}}</li>
+    <li [ngClass]="{'selected blue': city === 'Lima'}">{{city}}</li>
+    <li [ngClass]="{'selected': city === 'Lima',  'blue': city !== 'Lima' }">{{city}}</li>
+    <li (click)="onCityClicked($event)" [ngClass]="{'selected': city === selection}">{{city}}</li>
+    
+    <li *ngFor="let city of cities" (click)="onCityClicked(city)" [ngClass]="{'selected': city === selection}">{{city}}</li>
+</ul>
+
+<div *ngIf="selection">
+    <p>Your city is: {{selection}}</p>
+
+    <button (click)="onClear()">Limpia tu eleccion</button>
+
+    <app-button (click)="onClear()" [color]="'blue'" [label]="'Limpia tu seleccion'"></app-button>
+
+    <app-button (click)="onClear()" [color]="'green'" [label]="'Boton2'"></app-button>
+    <app-button (click)="onClear()" [color]="'gray'" [label]="'Boton3'"></app-button>
+</div> -->

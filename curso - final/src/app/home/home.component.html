@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 my-3">
+            <!-- <app-form-new-item (newItemEvent)="addNewCity($event)" [ngClass]="'btn-info'" [label]="'city'"></app-form-new-item> -->
+            <app-form-new-item (updateItemEvent)="updateCity($event)" [selection]="selection" (newItemEvent)="addNewCity($event)" [label]="'city'"></app-form-new-item>
+        </div>
+        <div class="col-md-6 my-3">
+            <input type="text" class="form-control" placeholder="Filtro..." [(ngModel)]="criterio" />
+        </div>
+        <hr />
+
+        <div class="col-md-8">
+            <ng-container *ngIf="cities.length > 0; else templateEmpty">
+                <app-cities *ngFor="let city of cities | filter : criterio" (citySelectedEvent)="onCitySelected($event)" [city]="city" [selection]="selection" (cityDeleteEvent)="onCityDelete($event)"></app-cities>
+            </ng-container>
+            <ng-template #templateEmpty> No tenemos ciudades xd </ng-template>
+        </div>
+
+        <hr />
+        <!-- <app-card>Soy header</app-card>
+        <app-card>Soy header2</app-card>
+        <app-card>Soy header3</app-card> -->
+
+        <app-card>
+            <div card-header>México</div>
+            <div card-body>Wey</div>
+        </app-card>
+        <p></p>
+        <app-card>
+            <div card-header>España</div>
+            <div card-body>Tío</div>
+        </app-card>
+        <p></p>
+        <app-card>
+            <div card-header>Argentina</div>
+            <div card-body>Che</div>
+        </app-card>
+
+        <div class="col-md-4">
+            <div *ngIf="selection?.name">
+                <p>Your city is: {{ selection?.name }}</p>
+                <app-button (click)="onClear()" [color]="'blue'" [label]="'Limpia tu seleccion'"></app-button>
+            </div>
+        </div>
+    </div>
+    <hr />
+</div>

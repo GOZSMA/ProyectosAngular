@@ -1,0 +1,46 @@
+<!-- <div class="container">
+    <div class="row">
+        Formulario
+        <div class="col-md-6 my-3">
+            <app-form-new-item (newItemEvent)="addNewCity($event)" [etiqueta]="'Ciudad'">
+                [className]="'btn-info'"  //va dentro del app-form
+            </app-form-new-item>
+        </div>
+
+        Buscador funcional
+        <div class="col-md-6 my-3">
+            <input type="text" class="form-control" placeholder="Buscar..." [(ngModel)]="criterio">
+        </div>
+        <hr />
+
+        Lista ciudades y adicion
+        <div class="col-md-8">
+            <ul>
+                <app-cities *ngFor="let ciudad of (ciudades | filter:criterio)" (cityClickedEvent)="onCityClicked($event)" [city]="ciudad" [selection]="selection">
+                </app-cities>
+            </ul>
+        </div>
+
+        Eleccion y revertir eleccion
+        <div class="col-md-4">
+            <div *ngIf="selection">
+                <p>Tu elección es: {{ selection }}</p>
+                <app-button (click)="onClear()" [label]="'Elimina tu selección'">
+                </app-button>
+            </div>
+        </div>
+    </div>
+</div>
+<hr> -->
+<app-spinner></app-spinner>
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <router-outlet></router-outlet>
+        </div>
+        <!-- <div class="col-6">
+            <app-contact-reactive></app-contact-reactive>
+        </div> -->
+    </div>
+</div>

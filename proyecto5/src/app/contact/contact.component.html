@@ -1,0 +1,49 @@
+<br>
+<h1>Ponte en Contacto...</h1>
+<form (ngSubmit)="onSubmit()" [formGroup]="contactForm">
+    <!-- Campo Nombre -->
+    <div class="mb-4">
+        <label for="name" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="name" name="name" formControlName="name" required>
+        <div *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.errors?.['required']" class="alert alert-danger">Este campo es requerido.</div>
+        <div *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.errors?.['minlength']" class="alert alert-danger">Favor de ingresar más de {{contactForm.get('name')?.errors?.['minlength'].requiredLength}} caracteres.</div>
+    </div>
+
+    <!-- Campo Sexo -->
+    <div class="mb-4">
+        <label for="genero" class="form-label">Sexo</label>
+        <select formControlName="genero" class="form-select form-select-sm" name="genero" id="">
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+            <option value="Otro">Otro...</option>
+        </select>
+        <div *ngIf="contactForm.get('genero')?.touched && contactForm.get('genero')?.errors?.['required']" class="alert alert-danger">Este campo es requerido.</div>
+    </div>
+
+    <!-- Campo Edad -->
+    <div class="mb-4">
+        <label for="edad" class="form-label">Edad</label>
+        <input formControlName="edad" type="text" class="form-control" id="edad" name="edad" required>
+        <div *ngIf="contactForm.get('edad')?.touched && contactForm.get('edad')?.errors?.['required']" class="alert alert-danger">Este campo es requerido.</div>
+        <div *ngIf="contactForm.get('edad')?.touched && contactForm.get('edad')?.errors?.['maxlength']" class="alert alert-danger">Edad imposible, favor de verificar.</div>
+    </div>
+
+
+    <!-- Campo Correo -->
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Dirección de E-mail</label>
+        <input formControlName="correo" name="correo" type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        <div *ngIf="contactForm.get('correo')?.touched && contactForm.get('correo')?.errors?.['required']" class="alert alert-danger">Este campo es requerido.</div>
+    </div>
+
+    <!-- Botón Enviar -->
+    <div class="float-end d-grid gap-2 col-md-4">
+        <button type="submit" class="btn btn-info" [disabled]="contactForm.invalid">Enviar</button>
+    </div>
+
+</form>
+<br>
+<br>
+<hr>
+<label for="">Resultados</label>
+<pre>{{contactForm.value | json}}</pre>

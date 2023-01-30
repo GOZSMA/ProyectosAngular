@@ -1,0 +1,16 @@
+<form action="">
+    <div class="row align-items-center">
+        <div class="col-auto">
+            <label for="newItem" class="col-form-label">¿No ves tu ciudad? Añádela!</label>
+        </div>
+        <div class="col-auto">
+            <input name="newItem" type="text" id="newItem" class="form-control" [ngModel]="selection?.name" #newItem>
+        </div>
+        <div class="col-auto">
+            <button *ngIf="!selection?.name" (click)="nuevoItem(newItem.value); newItem.value=''" type="button" class="btn" [ngClass]="[className]">Añadir
+          {{etiqueta}}</button>
+            <button *ngIf="selection?.name" (click)="onUpdateItem(selection, newItem.value); newItem.value=''" type="button" class="btn" [ngClass]="[className]">Update
+            {{etiqueta}}</button>
+        </div>
+    </div>
+</form>

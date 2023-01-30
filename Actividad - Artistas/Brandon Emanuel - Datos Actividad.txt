@@ -1,0 +1,7 @@
+Brandon Emanuel González Morales - 10/01/2023
+
+Las tecnologías y lenguajes que utilicé para el desarrollo de este trabajo de muestra fueron unas cuantas (de ahí que sea un sitio más simple).
+
+LENGUAJES: HTML 5 y CSS 3
+FRAMEWORK: Bootstrap 5.x
+HERRAMIENTAS: Visual Studio Code y Plugins de Snippets de HTML

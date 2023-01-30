@@ -1,0 +1,18 @@
+<form action="">
+    <div class="row align-items-center">
+        <div class="col-auto">
+            <label for="newItem" class="col-form-label">New</label>
+        </div>
+        <div class="col-auto">
+            <input name="newItem" type="text" class="form-control" id="newItem" #newItem [ngModel]="selection?.name" />
+        </div>
+        <div class="col-auto">
+            <button *ngIf="!selection?.name" type="button" class="btn btn-primary" (click)="onAddNewItem()" [ngClass]="className">
+        Add
+      </button>
+            <button *ngIf="selection?.name" type="button" class="btn btn-primary" (click)="onUpdateItem()" [ngClass]="className">
+        Update
+      </button>
+        </div>
+    </div>
+</form>

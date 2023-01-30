@@ -1,0 +1,153 @@
+/* Barra de navegacion */
+.navbar{
+    padding: 0.5cm;
+    background-color: #f5f6f7;
+}
+.volver{
+    color: rgb(238, 235, 43);
+}
+.navbar-collapse{
+    align-items: center;
+    justify-content: space-between;
+}
+
+.columna2{
+    padding-top: 80px;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    font-size: 2.5rem;
+    font-family: 'Kanit', sans-serif;
+    align-items: center;
+}
+
+/* iconos */
+.experiencia i{
+    font-size: 2.5rem;
+    color: white;
+    background-color: #0a0a23;
+    padding: 8px 19px;
+    border-radius: 20%;
+}
+
+/* seccion hero */
+.hero{
+    min-height: 450px;
+    text-align: center;
+    background-image: url(https://cdn.wallpapersafari.com/60/20/CoVSxn.jpg);
+}
+
+.hero-principal{
+    padding: 3rem;
+}
+
+.hero-principal h2{
+    font-size: 1.5rem;
+    color: white;
+}
+
+.hero-imagen-desarrollador{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 50px;
+}
+
+.titulos{
+    font-size: 25px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.seccion-titulo{
+    font-size: 2rem;
+    padding: 15px;
+    font-family: 'Kanit', sans-serif;
+}
+
+.seccion-texto{
+    font-size: 1.2rem;
+}
+.seccion-clara{
+    color: black;
+    background-color: white;
+}
+
+.experiencia .columna{
+    padding: 20px;
+    border: 2px solid #8080804d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: all 0.3s ease-in;
+    /* border-radius: 10%; */
+}
+
+.experiencia .columna:hover{
+    color: white;
+    background-color: #364B71;
+}
+
+.seccion-oscura{
+    margin: 1px 0 0 0;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: white;
+    background-color: #000000;
+}
+
+.seccion-azul{
+    margin: 0 0 30px 0;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: white;
+    background-color: #2b52a8;
+}
+
+.contacto button{
+    color: white;
+    font-weight: bold;
+    background-color: transparent;
+    border: 2px solid white;
+    padding: 1.25em 2em;
+    margin: 10px;
+    border-radius: 50px;
+    transition: all 0.2s ease-in-out;
+}
+
+.contacto button i{
+    color: white;
+    font-size: 1.3rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.contacto button:hover{
+    background-color: black;
+    color: white;
+}
+
+.texto-footer{
+    margin: 25px 0 0 0;
+}
+
+.copyright{
+    margin-top: 15px;
+}
+
+.hero-inferior-imagen {
+    max-width: 600px;
+}
+
+.mis-hobbies{
+    margin: 30px 0 0 0;
+    color: white;
+    background-color: #1b1b32;
+}

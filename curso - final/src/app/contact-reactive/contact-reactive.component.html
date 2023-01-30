@@ -1,0 +1,58 @@
+<h1>Contact-reactive form {{ name }} {{ (selectedCity$ | async)?.name }}</h1>
+
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <div class="mb-4">
+        <label for="" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" name="name" required formControlName="name" />
+        <div *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.errors?.['required']" class="alert alert-danger">
+            Este campo es requerido.
+        </div>
+        <div *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.errors?.['minlength']" class="alert alert-danger">
+            Necesitas {{ contactForm.get('name')?.errors?.['minlength']?.requiredLength }} caracteres minimo.
+        </div>
+        <!-- <div [hidden]="name.valid || name.pristine" class="alert alert-danger">Este campo es requerido.</div> -->
+    </div>
+
+    <div class="mb-4">
+        <label for="checkAdult" class="form-label">Are you over 18 years old?</label
+    >
+    <input
+      type="checkbox"
+      class="form-check-input"
+      id="checkAdult"
+      name="checkAdult"
+      required
+      formControlName="checkAdult" />
+    <div
+      *ngIf="contactForm.get('checkAdult')?.touched && contactForm.get('checkAdult')?.errors?.['required']"
+      class="alert alert-danger">
+      Debes ser mayor de edad.
+    </div>
+    <!-- <div [hidden]="checkAdult.valid || checkAdult.pristine" class="alert alert-danger">Debes ser mayor de edad.</div> -->
+  </div>
+
+  <div class="mb-4">
+    <label for="" class="form-label">Department</label>
+        <select class="form-select form-select-sm" name="department" id="department" required formControlName="department">
+      <option *ngFor="let department of departments" [value]="department">
+        {{ department }}
+      </option>
+    </select>
+        <!-- <div [hidden]="department.valid || department.pristine" class="alert alert-danger">Este campo es requerido.</div> -->
+    </div>
+
+    <div class="mb-4">
+        <label for="" class="form-label">Comment</label>
+        <textarea class="form-control" name="comment" id="comment" rows="4" placeholder="Leave a comment" required formControlName="comment"></textarea>
+        <div *ngIf="contactForm.get('comment')?.touched && contactForm.get('comment')?.errors?.['required']" class="alert alert-danger">
+            Este campo es requerido.
+        </div>
+        <!-- <div [hidden]="comment.valid || comment.pristine" class="alert alert-danger">Este campo es requerido.</div> -->
+    </div>
+
+    <div class="d-grid float-end gap-2 col-4">
+        <button class="btn btn-info btn-lg" type="submit" [disabled]="contactForm.invalid">
+      Enviar
+    </button>
+    </div>
+</form>
